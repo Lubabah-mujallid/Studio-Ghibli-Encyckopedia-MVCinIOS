@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHx-r1-0Xg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fjg-ba-zGo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--People View Controller-->
+        <!--People-->
         <scene sceneID="MPc-Zo-t3H">
             <objects>
                 <viewController id="GHx-r1-0Xg" customClass="PeopleViewController" customModule="Studio_Ghibli_Encyckopedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1se-DZ-LLX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="peopleCell" id="gq6-es-UKn">
@@ -40,16 +40,78 @@
                             <constraint firstItem="OoM-9Z-V6n" firstAttribute="bottom" secondItem="1se-DZ-LLX" secondAttribute="bottom" id="mPw-RS-5wb"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="People" image="person.fill" catalog="system" id="C2s-OQ-vt2"/>
                     <connections>
                         <outlet property="tableViewPeople" destination="1se-DZ-LLX" id="3k7-OG-ZgC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfZ-HT-O1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-836" y="-22"/>
+            <point key="canvasLocation" x="213" y="-27"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="e3P-rp-lKk">
+            <objects>
+                <tabBarController id="Fjg-ba-zGo" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xSq-Cf-VWI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="d3J-49-jSF" kind="relationship" relationship="viewControllers" id="r1Y-e0-zOv"/>
+                        <segue destination="GHx-r1-0Xg" kind="relationship" relationship="viewControllers" id="9Dg-4f-fG9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8Y-la-IIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="-21"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="V0b-8C-VHE">
+            <objects>
+                <viewController id="d3J-49-jSF" customClass="MoviesViewController" customModule="Studio_Ghibli_Encyckopedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o6o-ZB-3xz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lk1-3R-DVE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moviesCell" id="Bxb-iY-mT7">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bxb-iY-mT7" id="cU0-M7-qRx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mYY-Mx-LdU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lk1-3R-DVE" firstAttribute="leading" secondItem="mYY-Mx-LdU" secondAttribute="leading" id="3I9-Mg-2nw"/>
+                            <constraint firstItem="lk1-3R-DVE" firstAttribute="top" secondItem="mYY-Mx-LdU" secondAttribute="top" id="PMq-Ws-95O"/>
+                            <constraint firstItem="mYY-Mx-LdU" firstAttribute="bottom" secondItem="lk1-3R-DVE" secondAttribute="bottom" id="gTC-75-s2a"/>
+                            <constraint firstItem="mYY-Mx-LdU" firstAttribute="trailing" secondItem="lk1-3R-DVE" secondAttribute="trailing" id="rFA-z0-iBf"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Movies" image="play.tv" catalog="system" id="wCd-WE-Ha5"/>
+                    <connections>
+                        <outlet property="tableViewMovies" destination="lk1-3R-DVE" id="1vO-0d-vSE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iQ2-Rj-P0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931.88405797101461" y="-27.455357142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="play.tv" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

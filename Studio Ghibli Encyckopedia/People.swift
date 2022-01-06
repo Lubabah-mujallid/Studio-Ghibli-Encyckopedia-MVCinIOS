@@ -47,3 +47,5 @@ enum Nder: String, Codable {
 }
 
 typealias People = [Person]
+
+

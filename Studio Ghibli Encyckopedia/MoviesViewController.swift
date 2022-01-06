@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MoviesViewController.swift
 //  Studio Ghibli Encyckopedia
 //
 //  Created by administrator on 06/01/2022.
@@ -7,20 +7,20 @@
 
 import UIKit
 
-class PeopleViewController: UIViewController {
-    @IBOutlet weak var tableViewPeople: UITableView!
-    var people = People()
+class MoviesViewController: UIViewController {
+
+    @IBOutlet weak var tableViewMovies: UITableView!
+    var movies = Movies()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPeople()
-        tableViewPeople.delegate = self
-        tableViewPeople.dataSource = self
+        tableViewMovies.delegate = self
+        tableViewMovies.dataSource = self
+        fetchMovies()
     }
     
-    //fetch data
-    func fetchPeople() {
-        let url = URL(string: "https://ghibliapi.herokuapp.com/people")
+    func fetchMovies() {
+        let url = URL(string: "https://ghibliapi.herokuapp.com/films")
         let session = URLSession.shared
         let task = session.dataTask(with: url!, completionHandler: {
             data, response, error in
@@ -29,10 +29,10 @@ class PeopleViewController: UIViewController {
             guard let myData = data else { return }
             do {
                 let decoder = JSONDecoder()
-                let jsonResult = try decoder.decode(People.self, from: myData)
-                self.people = jsonResult
+                let jsonResult = try decoder.decode(Movies.self, from: myData)
+                self.movies = jsonResult
                 DispatchQueue.main.async {
-                    self.tableViewPeople.reloadData()
+                    self.tableViewMovies.reloadData()
                 }
             }
             catch {
@@ -42,20 +42,19 @@ class PeopleViewController: UIViewController {
         })
         task.resume()
     }
-    
+
 }
 
-extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
+extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(people.count)
-        return people.count
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell")!
-        cell.textLabel?.text = people[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "moviesCell")!
+        cell.textLabel?.text = movies[indexPath.row].title
         return cell
     }
+    
+    
 }
-
-
