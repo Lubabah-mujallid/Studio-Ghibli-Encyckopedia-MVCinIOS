@@ -16,13 +16,7 @@ class MoviesViewController: UIViewController {
         super.viewDidLoad()
         tableViewMovies.delegate = self
         tableViewMovies.dataSource = self
-        fetchMovies()
-    }
-    
-    func fetchMovies() {
-        let url = URL(string: "https://ghibliapi.herokuapp.com/films")
-        let session = URLSession.shared
-        let task = session.dataTask(with: url!, completionHandler: {
+        EncyclopediaModel.getData(with: "https://ghibliapi.herokuapp.com/films", completionHandler: {
             data, response, error in
             print("api initialized")
             print(data ?? "no data")
@@ -40,8 +34,31 @@ class MoviesViewController: UIViewController {
                 print(error.localizedDescription)
             }
         })
-        task.resume()
     }
+    
+//    func fetchMovies() {
+//        let url = URL(string: "https://ghibliapi.herokuapp.com/films")
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: url!, completionHandler: {
+//            data, response, error in
+//            print("api initialized")
+//            print(data ?? "no data")
+//            guard let myData = data else { return }
+//            do {
+//                let decoder = JSONDecoder()
+//                let jsonResult = try decoder.decode(Movies.self, from: myData)
+//                self.movies = jsonResult
+//                DispatchQueue.main.async {
+//                    self.tableViewMovies.reloadData()
+//                }
+//            }
+//            catch {
+//                print("error")
+//                print(error.localizedDescription)
+//            }
+//        })
+//        task.resume()
+//    }
 
 }
 

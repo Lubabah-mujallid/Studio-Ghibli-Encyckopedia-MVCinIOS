@@ -13,16 +13,9 @@ class PeopleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPeople()
         tableViewPeople.delegate = self
         tableViewPeople.dataSource = self
-    }
-    
-    //fetch data
-    func fetchPeople() {
-        let url = URL(string: "https://ghibliapi.herokuapp.com/people")
-        let session = URLSession.shared
-        let task = session.dataTask(with: url!, completionHandler: {
+        EncyclopediaModel.getData(with: "https://ghibliapi.herokuapp.com/people", completionHandler: {
             data, response, error in
             print("api initialized")
             print(data ?? "no data")
@@ -40,8 +33,32 @@ class PeopleViewController: UIViewController {
                 print(error.localizedDescription)
             }
         })
-        task.resume()
     }
+    
+    //fetch data
+//    func fetchPeople() {
+//        let url = URL(string: "https://ghibliapi.herokuapp.com/people")
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: url!, completionHandler: {
+//            data, response, error in
+//            print("api initialized")
+//            print(data ?? "no data")
+//            guard let myData = data else { return }
+//            do {
+//                let decoder = JSONDecoder()
+//                let jsonResult = try decoder.decode(People.self, from: myData)
+//                self.people = jsonResult
+//                DispatchQueue.main.async {
+//                    self.tableViewPeople.reloadData()
+//                }
+//            }
+//            catch {
+//                print("error")
+//                print(error.localizedDescription)
+//            }
+//        })
+//        task.resume()
+//    }
     
 }
 

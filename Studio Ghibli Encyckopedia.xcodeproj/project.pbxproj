@@ -16,6 +16,7 @@
 		C3F02B4327872A2600750D79 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F02B4227872A2600750D79 /* People.swift */; };
 		C3F02B452787596500750D79 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F02B442787596500750D79 /* Movies.swift */; };
 		C3F02B47278759E600750D79 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F02B46278759E600750D79 /* MoviesViewController.swift */; };
+		C3F02B492787627E00750D79 /* EncyclopediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F02B482787627E00750D79 /* EncyclopediaModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C3F02B4227872A2600750D79 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		C3F02B442787596500750D79 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		C3F02B46278759E600750D79 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		C3F02B482787627E00750D79 /* EncyclopediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopediaModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				C3F02B46278759E600750D79 /* MoviesViewController.swift */,
 				C3F02B4227872A2600750D79 /* People.swift */,
 				C3F02B34278726BF00750D79 /* Main.storyboard */,
+				C3F02B482787627E00750D79 /* EncyclopediaModel.swift */,
 				C3F02B37278726C100750D79 /* Assets.xcassets */,
 				C3F02B39278726C100750D79 /* LaunchScreen.storyboard */,
 				C3F02B3C278726C100750D79 /* Info.plist */,
@@ -150,6 +153,7 @@
 				C3F02B4327872A2600750D79 /* People.swift in Sources */,
 				C3F02B33278726BF00750D79 /* PeopleViewController.swift in Sources */,
 				C3F02B2F278726BF00750D79 /* AppDelegate.swift in Sources */,
+				C3F02B492787627E00750D79 /* EncyclopediaModel.swift in Sources */,
 				C3F02B31278726BF00750D79 /* SceneDelegate.swift in Sources */,
 				C3F02B47278759E600750D79 /* MoviesViewController.swift in Sources */,
 			);
